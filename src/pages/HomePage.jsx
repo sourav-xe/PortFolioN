@@ -12,6 +12,9 @@ import GalaxyButton from '../components/galaxyButton'
 import TiltCard from "../components/TiltCard.jsx"
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import EducationCertifications from "../components/EducationCertifications";
+import ContactForm from "../components/ContactForm"; // make sure the path is correct
+
+
 
 
 
@@ -93,7 +96,7 @@ const projects = {
         "Optimized design for mobile-first experience.",
       ],
       github: "https://github.com/sourav-xe/Shoes-3D",
-      demo: "",
+      demo: "https://3-d-ecom-y838.vercel.app/",
     },
     {
       title: "VoiceChat ChatBot",
@@ -107,7 +110,7 @@ const projects = {
         "Enabled voice commands and playback functionality.",
       ],
       github: "https://github.com/sourav-xe/VoiceChat-ChatBot",
-      demo: "#",
+      demo: "https://3-d-ecom-y838.vercel.app/",
     },
    
     
@@ -334,14 +337,48 @@ const projects = {
         </p>
 
         <div className="flex flex-col md:flex-row gap-4 mt-6">
-          <GalaxyButton className="text-purple-400">View My Work</GalaxyButton>
-          <GalaxyButton>Let’s Connect</GalaxyButton>
+       <a href="#projects">
+  <GalaxyButton className="text-purple-400">View My Work</GalaxyButton>
+</a>
+
+<a href="mailto:sourav20kumar02@gmail.com">
+  <GalaxyButton>Let’s Connect</GalaxyButton>
+</a>
+
         </div>
 <div className="flex gap-10 mt-auto text-3xl text-white pb-10">
+<a
+  href="https://github.com/sourav-xe"
+  target="_blank"
+  rel="noopener noreferrer"
+>
   <FaGithub className="hover:scale-125 hover:text-gray-800 transition" />
+</a>
+
+<a
+  href="https://www.linkedin.com/in/sourav-kumar-a80020345/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
   <FaLinkedin className="hover:scale-125 hover:text-blue-600 transition" />
-  <FaTwitter className="hover:scale-125 hover:text-sky-400 transition" />
+</a>
+
+<a
+  href="mailto:sourav20kumar02@gmail.com"
+  target="_blank"
+  rel="noopener noreferrer"
+>
   <SiGmail className="hover:scale-125 hover:text-red-500 transition" />
+</a>
+
+<a
+  href="https://twitter.com"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <FaTwitter className="hover:scale-125 hover:text-sky-400 transition" />
+</a>
+
 </div>
 
 
@@ -472,6 +509,24 @@ const projects = {
   <EducationCertifications />
 </section>
 
+
+
+{/* ================= Contact Section ========================================================================== */}
+<section id="contact" className="relative w-full py-24 px-6 z-10">
+  
+
+  <div className="max-w-4xl mx-auto text-center">
+
+ <Particles/>
+
+
+    {/* Contact Form */}
+    <ContactForm />
+    
+ 
+   
+  </div>
+</section>
 
 
     </div>
