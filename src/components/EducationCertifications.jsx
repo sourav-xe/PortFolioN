@@ -2,15 +2,10 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import GradientText from "./GradientText";
-// import Aurora from "./AuroraBg";
 import Particles from "./ParticlesBg";
 import Background from "./Background";
-       import { FaCertificate, FaAward } from "react-icons/fa";
-import { MdWorkspacePremium } from "react-icons/md";
 
-
-// Education Data
+// ======================= Education Data =======================
 const education = [
   {
     school: "Delhi University",
@@ -30,45 +25,50 @@ const education = [
   },
 ];
 
-// Certifications Data
+// ======================= Certifications Data =======================
 const certifications = [
   {
-    title: "Full Stack Web Development",
-    issuer: "Udemy",
+    title: "JavaScript Proficiency",
+    issuer: "Google Drive",
     year: "2024",
-    img: null,
+    description:
+      "Certified JavaScript Proficiency showcasing strong knowledge of core JS concepts and coding practices.",
+    embed: "https://drive.google.com/file/d/1OKMDL0E2nrpjF-WHfOYM8w0KhWyTKGab/preview",
+    type: "embed",
   },
   {
-    title: "React Advanced Concepts",
-    issuer: "Coursera",
+    title: "Software Engineering",
+    issuer: "Google Drive",
     year: "2024",
-    img: null,
+    description:
+      "Certification in Software Engineering demonstrating skills in designing, developing, and testing scalable applications.",
+    embed: "https://drive.google.com/file/d/1nJ8HdjdTTKJZG2UhlzeO3tAqmh6N7h7b/preview",
+    type: "embed",
   },
   {
-    title: "Data Structures & Algorithms",
-    issuer: "Coding Ninjas",
-    year: "2023",
-    img: null,
+    title: "Letter of Recommendation (LOR)",
+    issuer: "AapOrigo",
+    year: "2024",
+    description:
+      "Received LOR for AppOrigo intership .",
+    badge: true,
+    type: "badge",
   },
 ];
 
 export default function EducationCertifications() {
   return (
     <section className="relative w-full py-24 px-6 z-10 overflow-hidden">
-      {/* Background Layer 1 - Global Background */}
+      {/* Background */}
       <div className="absolute inset-0 -z-20">
         <Background />
       </div>
-
-   
-
-      {/* Background Layer 3 - Particles */}
       <div className="absolute inset-0 -z-0">
         <Particles />
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        {/* ================= Education Timeline ================= */}
+        {/* ================= Education ================= */}
         <div className="mb-24">
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-16">
             My <span className="text-purple-400">Education</span>
@@ -86,15 +86,7 @@ export default function EducationCertifications() {
               >
                 {/* Timeline Icon */}
                 <span className="absolute -left-6 flex items-center justify-center w-12 h-12 bg-black border border-purple-500 rounded-full shadow-lg overflow-hidden">
-                  {edu.logo ? (
-                    <img
-                      src={edu.logo}
-                      alt={edu.school}
-                      className="w-10 h-10 object-contain hover:scale-110 transition-transform"
-                    />
-                  ) : (
-                    <span className="text-purple-400 font-bold">🎓</span>
-                  )}
+                  <span className="text-purple-400 font-bold">🎓</span>
                 </span>
 
                 {/* Card */}
@@ -114,55 +106,57 @@ export default function EducationCertifications() {
         </div>
 
         {/* ================= Certifications ================= */}
+        <div>
+          <h1 className="text-4xl md:text-5xl font-bold text-center mb-16">
+            My <span className="text-purple-400">Certifications</span>
+          </h1>
 
-<div>
-  <h1 className="text-4xl md:text-5xl font-bold text-center mb-16">
-    My <span className="text-purple-400">Certifications</span>
-  </h1>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+            {certifications.map((cert, idx) => (
+              <motion.div
+                key={idx}
+                className="group relative bg-gradient-to-br from-purple-900/30 to-black/40
+                          backdrop-blur-xl border border-purple-500/30
+                          rounded-2xl p-6 shadow-lg
+                          hover:shadow-purple-500/40 hover:border-purple-400
+                          transition"
+              >
+                {/* If it's an embedded certificate */}
+                {cert.type === "embed" && (
+                  <div className="w-full h-56 bg-black/40 rounded-lg overflow-hidden mb-6 border border-purple-400/20">
+                    <iframe
+                      src={cert.embed}
+                      className="w-full h-full rounded-lg"
+                      title={cert.title}
+                      allow="autoplay"
+                    ></iframe>
+                  </div>
+                )}
 
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-    {certifications.map((cert, idx) => (
-      <motion.div
-        key={idx}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.97 }}
-        className="group relative bg-gradient-to-br from-purple-900/30 to-black/40 
-                   backdrop-blur-xl border border-purple-500/30 
-                   rounded-2xl p-6 shadow-lg 
-                   hover:shadow-purple-500/40 hover:border-purple-400
-                   transition transform hover:-translate-y-2"
-      >
-        {/* Certificate Icon (Fallback if no image) */}
-        <div className="w-full h-40 bg-black/40 rounded-lg flex items-center justify-center 
-                        overflow-hidden mb-6 border border-purple-400/20">
-          {cert.img ? (
-            <img
-              src={cert.img}
-              alt={cert.title}
-              className="w-full h-full object-cover rounded-lg"
-            />
-          ) : (
-            <FaCertificate className="text-purple-300 text-6xl" />
-          )}
+                {/* If it's a badge certificate */}
+                {cert.type === "badge" && (
+                  <div className="w-full h-40 flex items-center justify-center mb-6">
+                    <span className="px-6 py-3 text-lg font-semibold text-white bg-purple-600 rounded-full shadow-lg">
+                      {cert.title}
+                    </span>
+                  </div>
+                )}
+
+                {/* Details */}
+                <h2 className="text-xl font-bold text-purple-300 group-hover:text-white transition mb-2">
+                  {cert.title}
+                </h2>
+                <p className="text-gray-300 font-medium">{cert.issuer}</p>
+                <p className="text-sm text-gray-400">{cert.year}</p>
+
+                {/* Description */}
+                <p className="text-sm text-gray-300 mt-3 leading-relaxed">
+                  {cert.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
-
-        {/* Details */}
-        <h2 className="text-xl font-bold text-purple-300 group-hover:text-white transition">
-          {cert.title}
-        </h2>
-        <p className="text-gray-300">{cert.issuer}</p>
-        <p className="text-sm text-gray-400">{cert.year}</p>
-
-        {/* Glow Overlay */}
-        <div className="absolute inset-0 rounded-2xl 
-                        bg-gradient-to-tr from-purple-600/10 to-blue-600/10 
-                        opacity-0 group-hover:opacity-100 
-                        transition duration-500"></div>
-      </motion.div>
-    ))}
-  </div>
-</div>
-
       </div>
     </section>
   );

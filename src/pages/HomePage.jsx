@@ -13,6 +13,8 @@ import TiltCard from "../components/TiltCard.jsx"
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import EducationCertifications from "../components/EducationCertifications";
 import ContactForm from "../components/ContactForm"; // make sure the path is correct
+import SkillsSection from "../components/SkillsSection";
+
 
 
 
@@ -507,6 +509,15 @@ const projects = {
 {/* ================= Education & Certifications ========================================================================== */}
 <section id="education" className="relative w-full py-24 px-6 z-10">
   <EducationCertifications />
+</section>
+
+
+
+
+{/* ================= Skills Section ========================================================================== */}
+
+<section id="skill" className="relative w-full py-24 px-6 z-10">
+  <SkillsSection />
 </section>
 
 

@@ -55,6 +55,7 @@ export default function Navbar() {
     { name: "Experience", to: "experience" },
     { name: "Project", to: "projects" },
     { name: "Education", to: "education" },
+    { name: "Skill", to: "skill" },
     { name: "Contact", to: "contact" },
   ];
 
