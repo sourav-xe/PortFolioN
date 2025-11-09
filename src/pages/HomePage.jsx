@@ -29,6 +29,8 @@ import ToDo from "../assets/ToDo.png";
 import Weather from "../assets/Weather.png";
 import Github from "../assets/Github.png";
 import chatBot from "../assets/chatBot.png";
+import EnergyDrink from "../assets/EnergyDrink.jpg";
+import TrendBay from "../assets/TrendBay.jpg";
 
 // ================== LAZY LOAD HEAVY COMPONENTS ==================
 const EducationCertifications = React.lazy(() =>
@@ -42,52 +44,81 @@ export default function HomePage() {
   const [activeCategory, setActiveCategory] = useState("Full Stack");
 
   // ===== Experiences =====
-  const experiences = [
-    {
-      company: "Traincape",
-      role: "Full Stack Developer",
-      duration: "Aug 2025 – Current",
-      location: "Delhi, India",
-      logo: Traincape,
-      points: [
-        "Revamped and optimized CRM layout for responsiveness and UX.",
-        "Implemented WhatsApp chat integration with MongoDB storage.",
-        "Developed a Course Page with Cisco/IBM-based research.",
-        "Enhanced Admin Panel with voucher system & RBAC.",
-      ],
-    },
-    {
-      company: "AapOrigo",
-      role: "Full Stack Developer",
-      duration: "June 2025 – Aug 2025",
-      location: "Jaipur, India",
-      logo: aapOrigoLogo,
-      points: [
-        "Built a real-time chatbot using Turbo4 (UI + UX).",
-        "Integrated Razorpay for secure payments.",
-        "Developed invoice system with PDFKit + Twilio/Email.",
-      ],
-    },
-    {
-      company: "GeeksforGeeks",
-      role: "Full Stack Developer",
-      duration: "Dec 2024 – April 2025",
-      location: "Noida, India",
-      logo: gfgLogo,
-      points: [
-        "Built 3D sneaker commerce site (React Three Fiber).",
-        "Restaurant Reservation App with MERN + TinyMCE.",
-        "Integrated Appwrite auth & session mgmt.",
-        "Developed Weather Forecast App with API.",
-      ],
-    },
-  ];
+// ===== Experiences =====
+const experiences = [
+  {
+    company: "Traincape Technology",
+    role: "Full Stack & React Native Developer",
+    duration: "Aug 2025 – Present",
+    location: "Delhi, India",
+    logo: Traincape,
+    points: [
+      "Optimized CRM UI/UX and responsiveness, improving workflow efficiency across production modules.",
+      "Migrated CRM features into a React Native mobile application with performance optimization.",
+      "Built a full-stack Course Module with researched content (Cisco, IBM) and developed role-based admin features including voucher management.",
+    ],
+  },
+  {
+    company: "GeeksforGeeks",
+    role: "Full Stack Developer",
+    duration: "Dec 2024 – Apr 2025",
+    location: "Noida, India",
+    logo: gfgLogo,
+    points: [
+      "Built a 3D sneaker e-commerce website using React, Tailwind CSS, React Three Fiber, and GLTF models.",
+      "Developed a restaurant reservation system using the MERN stack with secure login and session handling.",
+      "Created a real-time rich text editor using React + TinyMCE integrated with Appwrite authentication.",
+    ],
+  },
+  {
+    company: "Bhagwati Engineering & Consultant",
+    role: "React & Node.js Developer",
+    duration: "Feb 2024 – Oct 2024",
+    location: "Noida, India",
+    logo: aapOrigoLogo, // 👈 Replace with actual logo import when available
+    points: [
+      "Led full-stack development for a customer-facing web application, resulting in 25% faster loading times and improved user experience.",
+      "Optimized application performance by identifying and refactoring inefficient code, leading to a 20% increase in speed.",
+      "Deployed applications on multiple cloud-based production environments and maintained staging environments for testing, ensuring smoother releases.",
+    ],
+  },
+];
+
 
   // ===== Projects =====
   const categories = ["Full Stack", "Frontend/UI", "AI"];
   const projects = {
     "Full Stack": [
+      
       {
+  title: "Energy Drink Website",
+  img: EnergyDrink,
+  duration: "2024",
+  location: "Remote",
+  tools: ["React.js", "Framer Motion", "Tailwind CSS", "React Three Fiber"],
+  points: [
+    "Next-level product landing page blending creativity and technology.",
+    "Immersive 3D model integration using React Three Fiber.",
+    "Smooth and modern animations powered by Framer Motion.",
+  ],
+  github: "https://github.com/sourav-xe/Energy-Drink",
+  demo: "https://lnkd.in/d2T6fSnh",
+},
+{
+  title: "TrendBay E-commerce",
+  img: TrendBay,
+  duration: "2024",
+  location: "Remote",
+  tools: ["React.js", "Tailwind CSS", "React Router"],
+  points: [
+    "Sleek fashion e-commerce web app inspired by real-world brands.",
+    "Dynamic product collections with category-based filtering.",
+    "Fully responsive shopping experience for all devices.",
+  ],
+  github: "https://github.com/sourav-xe/TrendBay",
+  demo: "https://lnkd.in/dv3_vSBE",
+},
+{
         title: "3D Shoes Website",
         img: Shoes3d,
         duration: "2024",
@@ -128,7 +159,7 @@ export default function HomePage() {
         ],
         github:
           "https://github.com/sourav-xe/All-Projects/tree/main/Restraunt%20site",
-        demo: "#",
+        demo: "https://foodin-38k8.vercel.app/",
       },
     ],
     "Frontend/UI": [
@@ -258,6 +289,7 @@ export default function HomePage() {
           <Typewriter
             words={[
               "I am a Fullstack Developer",
+              "I am React Native Developer",
               "I am a Software Engineer",
               "I am a UI/UX Designer",
             ]}

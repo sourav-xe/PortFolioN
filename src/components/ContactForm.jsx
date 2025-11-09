@@ -162,14 +162,14 @@ export default function ContactForm() {
 
             {/* Resume Buttons */}
             <div className="flex gap-4">
-              <a href="https://drive.google.com/file/d/1QI1l6AsdIdtj8RPQ_jd6piYxnF8tanOQ/view?usp=sharing"
+              <a href="https://drive.google.com/file/d/1Cx5ec2lO3Ih-CESSmBKE8VFBQg9lt9gl/view?usp=sharing"
                  target="_blank"
                  className="px-6 py-3 rounded-xl font-semibold text-white 
                             bg-gradient-to-r from-purple-500 to-pink-500 
                             shadow-lg hover:scale-105 transition">
                 View Resume
               </a>
-              <a href="https://drive.google.com/uc?export=download&id=1QI1l6AsdIdtj8RPQ_jd6piYxnF8tanOQ"
+              <a href="https://drive.google.com/uc?export=download&id=1Cx5ec2lO3Ih-CESSmBKE8VFBQg9lt9gl" 
                  className="px-6 py-3 rounded-xl font-semibold text-white 
                             bg-gradient-to-r from-cyan-500 to-blue-500 
                             shadow-lg hover:scale-105 transition">
